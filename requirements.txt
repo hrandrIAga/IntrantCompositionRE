@@ -1,0 +1,3 @@
+fuzzywuzzy
+google_oauth2_tool
+gspread
