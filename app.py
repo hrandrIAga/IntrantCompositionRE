@@ -81,19 +81,19 @@ def main():
                 data_index = matching_rows.index[0]  # Get the index of the matching row
                 st.dataframe(pd.DataFrame([row]))
 
-                if st.button(f"Delete {str(row['Detailed Name'])}"):
+                if st.button(f"Delete {str(row['Detailed Name'])} at index {row_index}"):
                     delete_row(int(data_index) + 2)  # Convert back to int before deleting row
                     st.write("Row deleted successfully!")
                     st.rerun()
 
-                if st.button(f"Edit {str(row['Detailed Name'])}"):
+                if st.button(f"Edit {str(row['Detailed Name'])} at index {row_index}"):
                     st.session_state.edit_row = row.copy()
                     st.session_state.edit_row_index = int(data_index) + 2
                     st.rerun()
 
                 if st.session_state.edit_row is not None:
                     with st.form(key='edit_product_form'):
-                        st.write(f"Edit {str(st.session_state.edit_row['Detailed Name'])}")
+                        st.write(f"Edit {str(st.session_state.edit_row['Detailed Name'])} at index {st.session_state.edit_row_index}")
                         
                         new_product = {}
                         for column in data.columns:
