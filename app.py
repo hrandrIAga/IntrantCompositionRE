@@ -35,7 +35,7 @@ def save_data(new_row):
 
 # Delete a row from the Google Sheets
 def delete_row(row_number):
-    worksheet.delete_row(row_number)
+    worksheet.delete_rows(row_number)
 
 # Search for approximate product matches and return results with scores
 def search_products(query, df, column, threshold=80):
